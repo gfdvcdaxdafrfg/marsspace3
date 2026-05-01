@@ -1,135 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlexBox Layout</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        
-        .flow {
-            background-color: #f0f0f0;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        .navbar-container {
-            display: flex;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-        }
-        
-        .navbar {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            margin-right: auto;
-            font-weight: bold;
-        }
-        
-        .nav-items {
-            display: flex;
-            gap: 20px;
-            margin-left: 20px;
-        }
-        
-        .section-label {
-            padding: 10px;
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            color: red;
-        }
-        
-        .main-section {
-            display: flex;
-            flex: 1;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            gap: 40px;
-        }
-        
-        .left, .right {
-            flex: 1;
-            height: 300px;
-            background-color: red;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            font-size: 32px;
-            border: 1px dashed darkred;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-        }
-        
-        .footer-content {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-items {
-            display: flex;
-            gap: 20px;
-            margin-left: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Hamster Kombat</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="navbar-container">
-        <div class="navbar">
-            <div class="logo">Logo</div>
-            <div class="nav-items">
-                <div>navbar</div>
-                <div>navbar</div>
-                <div>navbar</div>
-                <div>navbar</div>
-                <div>navbar</div>
-            </div>
+  <div id="app">
+    <!-- Header -->
+    <header id="header">
+      <div class="header-user">
+        <div class="user-avatar">
+          <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="20" fill="#4a3728"/><circle cx="20" cy="16" r="8" fill="#f5d0a0"/><ellipse cx="20" cy="32" rx="12" ry="8" fill="#f5d0a0"/></svg>
         </div>
+        <span class="user-name">Nick Jay</span>
+      </div>
+      <div class="header-badge">
+        <svg viewBox="0 0 20 20" width="16" height="16"><polygon points="10,2 12.5,7 18,7.5 14,11.5 15,17 10,14 5,17 6,11.5 2,7.5 7.5,7" fill="#F0B90B"/></svg>
+        <span>Binance</span>
+      </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div id="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Earn per tap</span>
+        <div class="stat-value"><span class="coin-mini">&#x1FA99;</span> +<span id="earn-per-tap">12</span></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Coins to level up</span>
+        <div class="stat-value" id="coins-to-level">10 M</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Profit per hour</span>
+        <div class="stat-value"><span class="coin-mini">&#x1FA99;</span> +<span id="profit-per-hour">0</span></div>
+      </div>
     </div>
 
-    <div class="section-label">1-Section</div>
-
-    <div class="main-section">
-        <div class="left">Left</div>
-        <div class="right">Right</div>
+    <!-- Coin Display -->
+    <div id="coin-display">
+      <div class="coin-icon-big">
+        <svg viewBox="0 0 40 40" width="36" height="36">
+          <circle cx="20" cy="20" r="18" fill="#F7931A" stroke="#FFD700" stroke-width="2"/>
+          <text x="20" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">$</text>
+        </svg>
+      </div>
+      <span id="coin-count">0</span>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="logo">Logo</div>
-            <div class="footer-items">
-                <div>footer</div>
-                <div>footer</div>
-                <div>footer</div>
-                <div>footer</div>
-            </div>
+    <!-- Level Progress -->
+    <div id="level-bar">
+      <div class="level-info">
+        <span id="level-name">Bronze</span>
+        <span id="level-progress-text">1/11</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="level-progress" style="width: 9%"></div>
+      </div>
+    </div>
+
+    <!-- Page: Exchange -->
+    <div class="page active" id="page-exchange">
+      <div class="hamster-area" id="hamster-tap-area">
+        <div class="hamster-glow"></div>
+        <div class="hamster-sprite" id="hamster-sprite">
+          <canvas id="hamster-canvas" width="280" height="280"></canvas>
         </div>
-    </footer>
+        <div id="tap-particles"></div>
+      </div>
+      <div class="energy-bar">
+        <div class="energy-icon">&#9889;</div>
+        <div class="energy-text"><span id="energy-current">6500</span> / <span id="energy-max">6500</span></div>
+        <button class="boost-btn" id="boost-btn">Boost</button>
+      </div>
+    </div>
+
+    <!-- Page: Mine -->
+    <div class="page" id="page-mine">
+      <div class="daily-combo">
+        <div class="combo-header">
+          <span>Daily combo</span>
+          <div class="combo-reward"><span class="coin-mini">&#x1FA99;</span> +5,000,000 <span class="combo-check">&#x1F7E2;</span></div>
+        </div>
+        <div class="combo-cards" id="combo-cards">
+          <div class="combo-slot"><div class="combo-card empty">?</div><span>Slot 1</span></div>
+          <div class="combo-slot"><div class="combo-card empty">?</div><span>Slot 2</span></div>
+          <div class="combo-slot"><div class="combo-card empty">?</div><span>Slot 3</span></div>
+        </div>
+      </div>
+      <div class="mine-tabs" id="mine-tabs">
+        <button class="mine-tab active" data-category="markets">Markets</button>
+        <button class="mine-tab" data-category="prteam">PR&Team</button>
+        <button class="mine-tab" data-category="legal">Legal</button>
+        <button class="mine-tab" data-category="specials">Specials</button>
+      </div>
+      <div class="mine-cards" id="mine-cards"></div>
+    </div>
+
+    <!-- Page: Friends -->
+    <div class="page" id="page-friends">
+      <div class="friends-header">
+        <div class="friends-icon">&#x1F91D;</div>
+        <h2>Invite friends!</h2>
+        <p>You and your friend will receive bonuses</p>
+      </div>
+      <div class="invite-bonus-list">
+        <div class="invite-bonus">
+          <div class="invite-icon">&#x1F381;</div>
+          <div class="invite-info">
+            <strong>Invite a friend</strong>
+            <span><span class="coin-mini">&#x1FA99;</span> +5,000 for you and your friend</span>
+          </div>
+        </div>
+        <div class="invite-bonus">
+          <div class="invite-icon">&#x1F381;</div>
+          <div class="invite-info">
+            <strong>Invite a friend with Telegram Premium</strong>
+            <span><span class="coin-mini">&#x1FA99;</span> +25,000 for you and your friend</span>
+          </div>
+        </div>
+      </div>
+      <div class="friends-list">
+        <h3>Friends list (<span id="friends-count">0</span>)</h3>
+        <div id="friends-list-content">
+          <div class="empty-state">You haven't invited anyone yet</div>
+        </div>
+      </div>
+      <button class="invite-btn" id="invite-btn">Invite a friend</button>
+    </div>
+
+    <!-- Page: Earn -->
+    <div class="page" id="page-earn">
+      <div class="earn-header">
+        <div class="earn-icon">&#x1FA99;</div>
+        <h2>Earn more coins</h2>
+      </div>
+      <div class="tasks-section">
+        <h3>Hamster YouTube</h3>
+        <div class="task-list" id="youtube-tasks"></div>
+      </div>
+      <div class="tasks-section">
+        <h3>Daily tasks</h3>
+        <div class="task-list" id="daily-tasks"></div>
+      </div>
+      <div class="tasks-section">
+        <h3>Tasks list</h3>
+        <div class="task-list" id="tasks-list"></div>
+      </div>
+    </div>
+
+    <!-- Page: Airdrop -->
+    <div class="page" id="page-airdrop">
+      <div class="airdrop-content">
+        <div class="airdrop-icon">&#x1F680;</div>
+        <h2>Airdrop</h2>
+        <p class="airdrop-desc">Listing is on its way. Tasks will appear soon. Stay tuned!</p>
+        <div class="airdrop-tasks">
+          <div class="airdrop-task">
+            <div class="task-icon">&#x1F4F1;</div>
+            <div class="task-info">
+              <strong>Connect your TON wallet</strong>
+              <span class="task-reward"><span class="coin-mini">&#x1FA99;</span> +500</span>
+            </div>
+            <button class="task-btn">Start</button>
+          </div>
+          <div class="airdrop-task">
+            <div class="task-icon">&#x2705;</div>
+            <div class="task-info">
+              <strong>Check eligibility</strong>
+              <span class="task-reward">Coming soon</span>
+            </div>
+            <button class="task-btn disabled">Soon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Modal -->
+    <div class="modal-overlay" id="card-modal">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-icon" id="modal-icon"></div>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <div class="modal-profit">
+          <span>Profit per hour</span>
+          <div class="modal-profit-value"><span class="coin-mini">&#x1FA99;</span> +<span id="modal-profit"></span></div>
+        </div>
+        <div class="modal-cost">
+          <span class="coin-mini">&#x1FA99;</span> <span id="modal-cost"></span>
+        </div>
+        <button class="modal-buy-btn" id="modal-buy-btn">Go ahead</button>
+      </div>
+    </div>
+
+    <!-- Boost Modal -->
+    <div class="modal-overlay" id="boost-modal">
+      <div class="modal-content boost-content">
+        <button class="modal-close" id="boost-modal-close">&times;</button>
+        <h3>Free daily boosters</h3>
+        <div class="boost-list">
+          <div class="boost-item" data-boost="turbo">
+            <div class="boost-icon">&#x1F680;</div>
+            <div class="boost-info">
+              <strong>Tapping Guru</strong>
+              <span>3/3 available</span>
+            </div>
+          </div>
+          <div class="boost-item" data-boost="fullEnergy">
+            <div class="boost-icon">&#9889;</div>
+            <div class="boost-info">
+              <strong>Full Energy</strong>
+              <span>3/3 available</span>
+            </div>
+          </div>
+        </div>
+        <h3>Boosters</h3>
+        <div class="boost-list">
+          <div class="boost-item" data-boost="multiTap">
+            <div class="boost-icon">&#x1F446;</div>
+            <div class="boost-info">
+              <strong>Multitap</strong>
+              <span><span class="coin-mini">&#x1FA99;</span> 2,000 &middot; lvl <span id="multitap-level">1</span></span>
+            </div>
+          </div>
+          <div class="boost-item" data-boost="energyLimit">
+            <div class="boost-icon">&#x1F50B;</div>
+            <div class="boost-info">
+              <strong>Energy limit</strong>
+              <span><span class="coin-mini">&#x1FA99;</span> 2,000 &middot; lvl <span id="energy-limit-level">1</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav id="bottom-nav">
+      <button class="nav-btn active" data-page="exchange">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/></svg>
+        <span>Exchange</span>
+      </button>
+      <button class="nav-btn" data-page="mine">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17.5 12a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+        <span>Mine</span>
+      </button>
+      <button class="nav-btn" data-page="friends">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/></svg>
+        <span>Friends</span>
+      </button>
+      <button class="nav-btn" data-page="earn">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+        <span>Earn</span>
+      </button>
+      <button class="nav-btn" data-page="airdrop">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" fill="currentColor"/></svg>
+        <span>Airdrop</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/hamster.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
