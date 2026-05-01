@@ -1,38 +1,60 @@
 # Hamster Kombat 🐹
 
-A tap-to-earn clicker game inspired by Hamster Kombat, built with vanilla HTML/CSS/JavaScript.
+A tap-to-earn clicker game inspired by Hamster Kombat, with Node.js backend and terminal CLI client.
 
 ## Features
 
-- **Tap-to-Earn**: Tap the hamster to earn coins with animated particles and haptic feedback
-- **Mining Cards**: Buy and upgrade cards across 4 categories (Markets, PR&Team, Legal, Specials) for passive income
+- **Registration & Login**: Create account, login from browser or terminal with same credentials
+- **Tap-to-Earn**: Tap the hamster to earn coins with animated particles
+- **Mining Cards**: Buy and upgrade cards across 4 categories for passive income
 - **Daily Combo**: Find 3 special cards to earn 5,000,000 bonus coins
 - **Boost System**: Turbo mode, full energy restore, multitap and energy limit upgrades
 - **Task System**: Complete tasks (YouTube, daily, special) to earn bonus coins
-- **Friends**: Invite friends for bonus rewards
-- **Airdrop**: Connect wallet and check eligibility
-- **Offline Earnings**: Earn coins even when offline (80% rate)
-- **Auto-save**: Progress saved to localStorage every 5 seconds
+- **CLI Client**: Check balance and buy cards from terminal
+- **Server Sync**: Game data synced between browser and CLI via Node.js server
 - **Canvas-rendered Hamster**: Custom animated hamster sprite with breathing, blinking, and tap reactions
 - **Level System**: Progress through 11 levels from Bronze to Creator
 
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start server
+npm start
+# or
+node server.js
+```
+
+Open http://localhost:3000 in browser to play.
+
+## CLI Client
+
+```bash
+# Start CLI (server must be running)
+npm run cli
+# or
+node cli.js
+```
+
+The CLI supports:
+- Login / Register (same credentials as browser)
+- View balance, level, energy, profit/hour
+- Tap to earn coins
+- Browse and buy mining cards
+
 ## Tech Stack
 
-- Pure HTML5 + CSS3 + JavaScript (no frameworks)
+- **Backend**: Node.js + Express
+- **Auth**: bcryptjs + JWT
+- **Storage**: JSON file (data/users.json)
+- **Frontend**: Vanilla HTML5 + CSS3 + JavaScript
+- **CLI**: Node.js readline (no external dependencies)
 - Canvas 2D for hamster sprite rendering
-- CSS animations and transitions
-- localStorage for persistence
 - Mobile-first responsive design
 
-## How to Play
-
-1. Open `index.html` in a browser
-2. Tap the hamster to earn coins
-3. Use coins to buy mining cards for passive income
-4. Complete tasks for bonus rewards
-5. Use boosts to maximize earnings
-
-## Screens
+## Screens (Browser)
 
 1. **Exchange** - Main tap screen with hamster, energy bar, and boost
 2. **Mine** - Mining cards with categories and daily combo
