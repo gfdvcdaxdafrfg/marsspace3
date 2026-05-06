@@ -1,0 +1,17 @@
+{
+  "name": "Hamster Kombat",
+  "short_name": "HamsterK",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0b1e",
+  "theme_color": "#F0B90B",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/hamster.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

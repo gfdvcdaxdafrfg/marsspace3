@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Exchange / Tap icon -->
+  <symbol id="icon-exchange" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <text x="12" y="16" text-anchor="middle" font-size="12" fill="currentColor">🐹</text>
+  </symbol>
+  <!-- Mine / Pickaxe icon -->
+  <symbol id="icon-mine" viewBox="0 0 24 24">
+    <path d="M5 19L12 5l7 14H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="9.5" y1="12" x2="14.5" y2="12" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <!-- Friends / Handshake icon -->
+  <symbol id="icon-friends" viewBox="0 0 24 24">
+    <path d="M3 12h3l3-3 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="7" cy="7" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <circle cx="17" cy="7" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <!-- Earn / Coin icon -->
+  <symbol id="icon-earn" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <text x="12" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="currentColor">$</text>
+  </symbol>
+  <!-- Airdrop / Rocket icon -->
+  <symbol id="icon-airdrop" viewBox="0 0 24 24">
+    <path d="M12 2C8 6 6 10 6 14c0 3 2.5 6 6 6s6-3 6-6c0-4-2-8-6-12z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="12" cy="14" r="2" fill="currentColor"/>
+  </symbol>
+  <!-- Coin icon for stats -->
+  <symbol id="icon-coin" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" fill="#F0B90B" stroke="#D4A200" stroke-width="1"/>
+    <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B6914">₽</text>
+  </symbol>
+  <!-- Energy bolt -->
+  <symbol id="icon-energy" viewBox="0 0 24 24">
+    <polygon points="13,2 5,14 11,14 9,22 19,10 13,10" fill="#FFD700" stroke="#D4A200" stroke-width="0.5"/>
+  </symbol>
+  <!-- Profit per hour -->
+  <symbol id="icon-profit" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M12 7v5l3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- Level star -->
+  <symbol id="icon-level" viewBox="0 0 24 24">
+    <polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+</svg>

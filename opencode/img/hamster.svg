@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Body -->
+  <ellipse cx="100" cy="130" rx="65" ry="55" fill="#F5C6AA"/>
+  <!-- Belly -->
+  <ellipse cx="100" cy="140" rx="45" ry="38" fill="#FDE8D0"/>
+  <!-- Left ear -->
+  <ellipse cx="60" cy="55" rx="18" ry="25" fill="#F5C6AA" transform="rotate(-15 60 55)"/>
+  <ellipse cx="60" cy="55" rx="11" ry="17" fill="#FFB6C1" transform="rotate(-15 60 55)"/>
+  <!-- Right ear -->
+  <ellipse cx="140" cy="55" rx="18" ry="25" fill="#F5C6AA" transform="rotate(15 140 55)"/>
+  <ellipse cx="140" cy="55" rx="11" ry="17" fill="#FFB6C1" transform="rotate(15 140 55)"/>
+  <!-- Head -->
+  <circle cx="100" cy="90" r="48" fill="#F5C6AA"/>
+  <!-- Cheeks -->
+  <circle cx="68" cy="102" r="14" fill="#FFB6C1" opacity="0.5"/>
+  <circle cx="132" cy="102" r="14" fill="#FFB6C1" opacity="0.5"/>
+  <!-- Eyes -->
+  <ellipse cx="82" cy="85" rx="7" ry="8" fill="#2D1B00"/>
+  <ellipse cx="118" cy="85" rx="7" ry="8" fill="#2D1B00"/>
+  <!-- Eye shine -->
+  <circle cx="85" cy="82" r="3" fill="#fff" opacity="0.9"/>
+  <circle cx="121" cy="82" r="3" fill="#fff" opacity="0.9"/>
+  <!-- Nose -->
+  <ellipse cx="100" cy="97" rx="5" ry="4" fill="#FF8FA3"/>
+  <!-- Mouth -->
+  <path d="M94 103 Q100 110 106 103" stroke="#C9876E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <line x1="55" y1="95" x2="75" y2="98" stroke="#C9876E" stroke-width="1" opacity="0.6"/>
+  <line x1="55" y1="102" x2="75" y2="102" stroke="#C9876E" stroke-width="1" opacity="0.6"/>
+  <line x1="145" y1="95" x2="125" y2="98" stroke="#C9876E" stroke-width="1" opacity="0.6"/>
+  <line x1="145" y1="102" x2="125" y2="102" stroke="#C9876E" stroke-width="1" opacity="0.6"/>
+  <!-- Paws -->
+  <ellipse cx="60" cy="170" rx="16" ry="10" fill="#F5C6AA"/>
+  <ellipse cx="140" cy="170" rx="16" ry="10" fill="#F5C6AA"/>
+  <!-- Paw pads -->
+  <ellipse cx="60" cy="172" rx="10" ry="6" fill="#FFB6C1" opacity="0.4"/>
+  <ellipse cx="140" cy="172" rx="10" ry="6" fill="#FFB6C1" opacity="0.4"/>
+  <!-- Crown / CEO hat -->
+  <polygon points="80,48 88,28 96,42 100,20 104,42 112,28 120,48" fill="#F0B90B" stroke="#D4A200" stroke-width="1"/>
+  <rect x="78" y="46" width="44" height="6" rx="2" fill="#F0B90B" stroke="#D4A200" stroke-width="0.5"/>
+  <!-- Crown gems -->
+  <circle cx="88" cy="49" r="2.5" fill="#FF4444"/>
+  <circle cx="100" cy="49" r="2.5" fill="#4488FF"/>
+  <circle cx="112" cy="49" r="2.5" fill="#44FF44"/>
+</svg>
